@@ -92,16 +92,17 @@ def handle_userinput(user_question):
 
 
 # ---------------- MAIN ---------------- #
-import os
-import streamlit as st
-from dotenv import load_dotenv
+def main():
+    import os
+    import streamlit as st
+    from dotenv import load_dotenv
 
-load_dotenv()
+    load_dotenv()
 
-api_key = os.getenv("GOOGLE_API_KEY")
+    api_key = os.getenv("GOOGLE_API_KEY")
 
-if not api_key:
-    api_key = st.secrets["GOOGLE_API_KEY"]
+    if not api_key:
+        api_key = st.secrets["GOOGLE_API_KEY"]
 
     st.set_page_config(
         page_title="Chat with PDFs",
